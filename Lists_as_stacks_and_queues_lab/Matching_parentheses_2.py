@@ -1,10 +1,8 @@
-input_data = input()
+input_data = list(input())
 indexes = []
 
 for i in range(len(input_data)):
-    char = input_data[i]
-    if char == "(":
+    if input_data[i] == "(":
         indexes.append(i)
-    elif char == ")":
-        l = indexes.pop()
-        print(input_data[l:i + 1])
+    elif input_data[i] == ")":
+        print(*input_data[indexes.pop():i + 1], sep="")
